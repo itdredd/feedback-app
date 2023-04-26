@@ -17,13 +17,4 @@ class FeedbackRequest extends Model
         'subject',
         'message',
     ];
-
-    public static function createFromRequest(Request $request): self
-    {
-        return self::create([
-            'email' => $request->input('email'),
-            'subject' => $request->input('subject'),
-            'message' => $request->input('message'),
-        ]);
-    }
 }

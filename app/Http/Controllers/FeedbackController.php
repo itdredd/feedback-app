@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
 use App\Models\FeedbackRequest;
+use Database\Factories\FeedbackRequestFactory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,6 +17,6 @@ class FeedbackController extends Controller
 {
 
     public function send(Request $request) {
-        return FeedbackRequest::createFromRequest($request);
+        FeedbackRequest::factory()::save($request->input('email'), $request->input('subject'), $request->input('message'));
     }
 }
