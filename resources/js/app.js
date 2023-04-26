@@ -8,11 +8,13 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import store from '@/Store/store';
 import {createRouter, createWebHashHistory} from 'vue-router'
 import Create from "@/Pages/Feedback/Create.vue";
+import List from "@/Pages/Feedback/List.vue";
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 const routes = [
     { path: '/create', component: Create },
+    { path: '/list', component: List },
 ]
 
 const router = createRouter({
