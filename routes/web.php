@@ -30,4 +30,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::post('/feedback-send', [\App\Http\Controllers\FeedbackController::class, 'send']);
+
 require __DIR__.'/auth.php';
